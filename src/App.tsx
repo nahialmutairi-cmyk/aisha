@@ -39,11 +39,13 @@ export default function App() {
     const form = e.currentTarget;
     const name = (form.elements.namedItem('name') as HTMLInputElement).value;
     const phone = (form.elements.namedItem('phone') as HTMLInputElement).value;
+    const service = (form.elements.namedItem('service') as HTMLSelectElement).value;
     const message = (form.elements.namedItem('message') as HTMLTextAreaElement).value;
 
     const text = `مرحباً، أود الاستفسار عن خدمة قانونية:
 الاسم: ${name}
 رقم الهاتف: ${phone}
+الخدمة المطلوبة: ${service}
 الرسالة: ${message}`;
 
     const encodedText = encodeURIComponent(text);
@@ -401,6 +403,21 @@ export default function App() {
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#C5A059] focus:border-transparent outline-none transition-all"
                       placeholder="أدخل رقم هاتفك"
                     />
+                  </div>
+                  <div>
+                    <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">الخدمة المطلوبة</label>
+                    <select 
+                      id="service" 
+                      name="service"
+                      required
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#C5A059] focus:border-transparent outline-none transition-all bg-white"
+                    >
+                      <option value="" disabled selected>اختر الخدمة القانونية</option>
+                      {services.map((service, index) => (
+                        <option key={index} value={service.title}>{service.title}</option>
+                      ))}
+                      <option value="أخرى">أخرى</option>
+                    </select>
                   </div>
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">الرسالة أو الاستفسار</label>
