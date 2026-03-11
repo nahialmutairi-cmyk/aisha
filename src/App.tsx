@@ -96,7 +96,7 @@ export default function App() {
                 </a>
               ))}
               <a 
-                href="https://wa.me/9656666354" 
+                href="https://wa.me/96566666354" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="bg-[#C5A059] hover:bg-[#b08d4b] text-white px-6 py-2 rounded-md transition-colors flex items-center gap-2 font-medium"
@@ -135,7 +135,7 @@ export default function App() {
                 </a>
               ))}
               <a 
-                href="https://wa.me/9656666354" 
+                href="https://wa.me/96566666354" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="bg-[#C5A059] text-white px-4 py-3 rounded-md text-center font-medium mt-2 flex items-center justify-center gap-2"
@@ -177,14 +177,14 @@ export default function App() {
               
               <div className="flex flex-wrap gap-4">
                 <a 
-                  href="tel:6666354" 
+                  href="tel:66666354" 
                   className="bg-[#C5A059] hover:bg-[#b08d4b] text-white px-8 py-4 rounded-md transition-colors flex items-center gap-3 font-bold text-lg"
                 >
                   <Phone size={24} />
                   <span>اتصل الآن</span>
                 </a>
                 <a 
-                  href="https://wa.me/9656666354" 
+                  href="https://wa.me/96566666354" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="bg-transparent border-2 border-[#C5A059] text-[#C5A059] hover:bg-[#C5A059] hover:text-white px-8 py-4 rounded-md transition-colors flex items-center gap-3 font-bold text-lg"
@@ -327,8 +327,8 @@ export default function App() {
                     </div>
                     <div>
                       <h4 className="text-white font-bold text-xl mb-2">الهاتف والواتساب</h4>
-                      <a href="tel:6666354" className="text-gray-300 hover:text-[#C5A059] transition-colors block text-lg" dir="ltr">
-                        6666 354
+                      <a href="tel:66666354" className="text-gray-300 hover:text-[#C5A059] transition-colors block text-lg" dir="ltr">
+                        6666 6354
                       </a>
                     </div>
                   </div>
