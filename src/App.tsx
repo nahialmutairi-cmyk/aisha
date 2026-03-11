@@ -34,6 +34,22 @@ export default function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleWhatsAppSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const name = (form.elements.namedItem('name') as HTMLInputElement).value;
+    const phone = (form.elements.namedItem('phone') as HTMLInputElement).value;
+    const message = (form.elements.namedItem('message') as HTMLTextAreaElement).value;
+
+    const text = `مرحباً، أود الاستفسار عن خدمة قانونية:
+الاسم: ${name}
+رقم الهاتف: ${phone}
+الرسالة: ${message}`;
+
+    const encodedText = encodeURIComponent(text);
+    window.open(`https://wa.me/96566666354?text=${encodedText}`, '_blank');
+  };
+
   const navLinks = [
     { name: 'الرئيسية', href: '#home' },
     { name: 'من نحن', href: '#about' },
@@ -363,12 +379,14 @@ export default function App() {
                 className="bg-white rounded-2xl p-8 shadow-2xl"
               >
                 <h3 className="text-2xl font-bold text-[#0A1931] mb-6">أرسل لنا رسالة</h3>
-                <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+                <form className="space-y-6" onSubmit={handleWhatsAppSubmit}>
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">الاسم الكامل</label>
                     <input 
                       type="text" 
                       id="name" 
+                      name="name"
+                      required
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#C5A059] focus:border-transparent outline-none transition-all"
                       placeholder="أدخل اسمك الكريم"
                     />
@@ -378,6 +396,8 @@ export default function App() {
                     <input 
                       type="tel" 
                       id="phone" 
+                      name="phone"
+                      required
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#C5A059] focus:border-transparent outline-none transition-all"
                       placeholder="أدخل رقم هاتفك"
                     />
@@ -386,6 +406,8 @@ export default function App() {
                     <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">الرسالة أو الاستفسار</label>
                     <textarea 
                       id="message" 
+                      name="message"
+                      required
                       rows={4}
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#C5A059] focus:border-transparent outline-none transition-all resize-none"
                       placeholder="كيف يمكننا مساعدتك؟"
@@ -395,7 +417,8 @@ export default function App() {
                     type="submit"
                     className="w-full bg-[#0A1931] hover:bg-[#112647] text-white font-bold py-4 rounded-lg transition-colors flex justify-center items-center gap-2"
                   >
-                    <span>إرسال الطلب</span>
+                    <MessageCircle size={20} />
+                    <span>إرسال الطلب عبر الواتساب</span>
                   </button>
                 </form>
               </motion.div>
