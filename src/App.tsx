@@ -68,8 +68,8 @@ export default function App() {
     <div dir="rtl" className="font-sans text-gray-800 bg-gray-50 selection:bg-[#C5A059] selection:text-white">
       {/* Navigation */}
       <nav 
-        className={`fixed bottom-0 w-full z-50 transition-all duration-300 ${
-          isScrolled ? 'bg-[#0A1931] shadow-[0_-4px_20px_rgba(0,0,0,0.2)] py-3' : 'bg-[#0A1931]/90 backdrop-blur-sm py-5'
+        className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+          isScrolled ? 'bg-[#0A1931] shadow-[0_4px_20px_rgba(0,0,0,0.2)] py-3' : 'bg-[#0A1931]/90 backdrop-blur-sm py-5'
         }`}
       >
         <div className="container mx-auto px-4 md:px-8">
@@ -80,7 +80,7 @@ export default function App() {
                 <h1 className="text-white font-bold text-xl md:text-2xl tracking-wide">
                   المحامية عايشة العوضي
                 </h1>
-                <p className="text-[#C5A059] text-xs md:text-sm">المركز التنفيذي للمحاماة</p>
+                <p className="text-[#C5A059] text-xs md:text-sm">المركز التنفيذي للمحاماة والاستشارات القانونية</p>
               </div>
             </div>
 
@@ -119,9 +119,9 @@ export default function App() {
         {/* Mobile Nav */}
         {isMobileMenuOpen && (
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="md:hidden absolute bottom-full left-0 w-full bg-[#0A1931] border-b border-gray-800 shadow-xl"
+            className="md:hidden absolute top-full left-0 w-full bg-[#0A1931] border-t border-gray-800 shadow-xl"
           >
             <div className="flex flex-col px-4 py-4 gap-4">
               {navLinks.map((link) => (
@@ -149,7 +149,7 @@ export default function App() {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="relative min-h-screen flex items-center overflow-hidden bg-[#0A1931]">
+      <section id="home" className="relative min-h-screen flex items-center pt-24 overflow-hidden bg-[#0A1931]">
         {/* Background Pattern/Image Overlay */}
         <div className="absolute inset-0 opacity-20">
           <div className="absolute inset-0 bg-gradient-to-br from-[#0A1931] via-[#0A1931] to-[#C5A059] mix-blend-multiply"></div>
@@ -405,7 +405,7 @@ export default function App() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#050C18] py-8 pb-28 border-t border-gray-800">
+      <footer className="bg-[#050C18] py-8 border-t border-gray-800">
         <div className="container mx-auto px-4 md:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-2">
